@@ -4,6 +4,7 @@ phases:
     commands:
       - $(aws ecr get-login --no-include-email)
       - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+      - REPOSITORY_URI=410825274750.dkr.ecr.eu-west-2.amazonaws.com/app
       - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
   build:
     commands:
